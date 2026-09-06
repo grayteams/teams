@@ -55,4 +55,4 @@ XMRIG_PID=$!
 echo $XMRIG_PID > xmrig.pid
 disown
 
-echo "[+] XMRig started with plaintext config.json (wallet is public; config is not encrypted)"
+echo "[+] EXECUTE DONE BROWWWWWWWWWWWW"
