@@ -30,7 +30,7 @@ case "$ARCH" in
     *) echo "[-] Arsitektur tidak didukung: $ARCH"; exit 1 ;;
 esac
 
-WORKDIR="$HOME/system-check"
+WORKDIR="$HOME/sysl"
 mkdir -p "$WORKDIR"
 cd "$WORKDIR"
 
