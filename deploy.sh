@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #=============================================================================
-BINGUNG YAH? MAKANYA KESINI OAWKOAWKOAWKOAWKOAWKOAW
+#BINGUNG YAH? MAKANYA KESINI OAWKOAWKOAWKOAWKOAWKOAW
 #=============================================================================
 
 WALLET="43sxNTTWiKQj4LehDazVb8NQRKDztwiRcPFCivj3PbrqFPhujjxLd5TDCWfT6edSPXVRmUh3vhxysA35uHWnwY5UKGxvYFB"
